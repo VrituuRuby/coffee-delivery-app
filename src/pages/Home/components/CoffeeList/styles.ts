@@ -25,7 +25,6 @@ export const CoffeListContainer = styled.main`
       footer {
         display: flex;
         align-items: center;
-        line-height: ;
 
         input {
           width: 72px;
