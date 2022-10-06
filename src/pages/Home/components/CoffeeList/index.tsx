@@ -13,6 +13,14 @@ export function CoffeList(){
 				<CoffeeCard />
 				<CoffeeCard />
 				<CoffeeCard />
+				<CoffeeCard />
+				<CoffeeCard />
+				<CoffeeCard />
+				<CoffeeCard />
+				<CoffeeCard />
+				<CoffeeCard />
+				<CoffeeCard />
+				<CoffeeCard />
 			</ul>
 		</CoffeListContainer>
 	)

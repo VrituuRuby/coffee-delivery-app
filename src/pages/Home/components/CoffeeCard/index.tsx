@@ -1,7 +1,7 @@
 import { ShoppingCart } from "phosphor-react"
 import ExpressoImage from "../../../../assets/coffees/Expresso.png"
 
-import { CoffeeCardContainer, CoffeeDescription, CoffeeName, ContentContainer, Tags } from "./styles"
+import { ActionsContainer, CardFooter, CoffeeCardContainer, CoffeeDescription, CoffeeName, ContentContainer, Tags } from "./styles"
 
 export function CoffeeCard(){
 	return (
@@ -10,21 +10,22 @@ export function CoffeeCard(){
 				<img src={ExpressoImage} alt="Expresso Tradicional" />
 				<Tags>
 					<span>Tradicional</span>
+					<span>Com Leite</span>
 				</Tags>
 				<CoffeeName>Expresso Tradicional</CoffeeName>
 				<CoffeeDescription>O tradicional café feito com água quente e grãos moídos</CoffeeDescription>
 			</ContentContainer>
-			<footer>
+			<CardFooter>
 				<span>
 							R$ <b>9,90</b>
 				</span>
-				<div>
-					<input type="number" />
+				<ActionsContainer>
+					<input type="number" value={1} />
 					<button>
-						<ShoppingCart weight="fill" />
+						<ShoppingCart weight="fill" size={22} />
 					</button>
-				</div>
-			</footer>
+				</ActionsContainer>
+			</CardFooter>
 		</CoffeeCardContainer>
 	)
 }
