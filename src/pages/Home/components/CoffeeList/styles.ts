@@ -1,7 +1,7 @@
 import styled from "styled-components"
 
 export const CoffeListContainer = styled.main`
-  padding: 2rem 0;
+  padding: 2rem 10rem;
 
   h3{
     font-family: 'Baloo 2', cursive;
