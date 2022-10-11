@@ -1,7 +1,7 @@
 
 import { ActionsContainer, HeaderContainer } from "./styles"
 import {MapPin, ShoppingCart} from "phosphor-react"
-import logo from "../../assets/Logo.svg"
+import logo from "/assets/Logo.svg"
 import { NavLink } from "react-router-dom"
 
 

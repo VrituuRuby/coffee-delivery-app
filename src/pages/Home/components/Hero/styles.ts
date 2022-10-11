@@ -1,14 +1,20 @@
 import styled from "styled-components"
 
-import BgImage from "../../../../assets/Background.png"
-
 export const HeroContainer = styled.main`
   display: flex;
   align-items: center;
   justify-content: space-between;
   gap: 3.5rem;
-  padding: 6rem 10rem;
-  background-image: url(${BgImage});
+  padding: 6rem 0;
+  overflow: show;
+
+  img.blur{
+    width: 100%;
+    position: absolute;
+    left: 0;
+    top: 0;
+    z-index: -1;
+  }
 
   div {
     h1 {

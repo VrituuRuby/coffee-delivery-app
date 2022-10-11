@@ -1,7 +1,6 @@
 import styled from "styled-components"
 
 export const HeaderContainer = styled.header`
-  margin: 0 10rem;
   nav {
     margin: 2rem 0;
     display: flex;

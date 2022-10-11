@@ -1,10 +1,13 @@
 import { Coffee, Package, ShoppingCart, Timer } from "phosphor-react"
-import coffeImage from "../../../../assets/Imagem.png"
+import coffeImage from "/assets/Imagem.png"
 import { GridContainer, HeroContainer, ImageContainer } from "./styles"
+
+import BgImage from "/assets/Background.png"
 
 export function Hero(){
 	return(
 		<HeroContainer>
+			<img className='blur' src={BgImage} alt="" />
 			<div>
 				<h1>
 					Encontre o café perfeito para qualque hora do dia
