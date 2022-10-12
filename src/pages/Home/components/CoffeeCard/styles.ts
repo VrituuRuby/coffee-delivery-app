@@ -84,18 +84,7 @@ export const ActionsContainer = styled.div`
   justify-content: space-between;
   gap: 8px;
 
-
-  input {
-    width: 72px;
-    font-size: 1rem;
-    line-height: 1.3;
-    border: 0;
-    border-radius: 6px;
-    background-color: ${props => props.theme["base-button"]};
-    text-align: center;
-  }
-
-  button {
+  > button {
     display: flex;
     align-items: center;
     justify-content: center;

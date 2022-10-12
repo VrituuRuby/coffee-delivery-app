@@ -36,7 +36,7 @@ export const COFFEE_LIST : Coffee[] = [
 		price: 990,
 	},
 	{
-		name: "Café com Leita",
+		name: "Café com Leite",
 		description: "Meio a meio de café tradicional com leite vaporizado",
 		tags: ["tradicional", "com leite"],
 		image: "../assets/coffees/Café com Leite.png",
@@ -79,7 +79,7 @@ export const COFFEE_LIST : Coffee[] = [
 	},
 	{
 		name: "Cubano",
-		description: "O tradicional café feito com água quente e grãos moídos.",
+		description: "Drink gelado de café expresso com rum, creme de leite e hortelã",
 		tags: ["especial", "alcoólico", "gelado"],
 		image: "../assets/coffees/Cubano.png",
 		price: 990,
@@ -93,14 +93,14 @@ export const COFFEE_LIST : Coffee[] = [
 	},
 	{
 		name: "Árabe",
-		description: "O tradicional café feito com água quente e grãos moídos.",
+		description: "Bebida preparada com grãos de café árabe e especiarias",
 		tags: ["especial"],
 		image: "../assets/coffees/Árabe.png",
 		price: 990,
 	},
 	{
 		name: "Irlandês",
-		description: "O tradicional café feito com água quente e grãos moídos.",
+		description: "Bebida a base de café, uísque irlandês, açúcar e chantilly",
 		tags: ["especial", "alcoólico"],
 		image: "../assets/coffees/Irlandês.png",
 		price: 990,

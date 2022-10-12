@@ -1,5 +1,6 @@
 import { ShoppingCart } from "phosphor-react"
 import ExpressoImage from "../../../../assets/coffees/Expresso.png"
+import { InputCounter } from "../../../../components/InputCounter"
 import { Coffee } from "../../../../data/coffees"
 
 import { ActionsContainer, CardFooter, CoffeeCardContainer, CoffeeDescription, CoffeeName, ContentContainer, Tags } from "./styles"
@@ -27,7 +28,7 @@ export function CoffeeCard({ coffee }: CoffeeCardProps){
 							R$ <b>{(coffee.price/100).toFixed(2)}</b>
 				</span>
 				<ActionsContainer>
-					<input type="number" value={1} />
+					<InputCounter />
 					<button>
 						<ShoppingCart weight="fill" size={22} />
 					</button>

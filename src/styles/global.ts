@@ -7,6 +7,20 @@ export const GlobalStyle = createGlobalStyle`
     padding: 0;
     box-sizing: border-box;
   }
+  
+  :focus{
+    outline: 0;
+    box-shadow: 0 0 1px 1px ${props => props.theme["purple-500"]};
+  }
+  
+  button:hover{
+    cursor: pointer;
+  }
+  
+  body {
+    background-color: ${props => props.theme.white};
+    -webkit-font-smoothing: antialised;
+  }
 
   body, input, button, textarea{
     font-family: 'Roboto', sans-serif;
@@ -14,11 +28,13 @@ export const GlobalStyle = createGlobalStyle`
     font-size: 1rem;
   }
 
-  button:hover{
-    cursor: pointer;
+  input[type="number"] {
+  -webkit-appearance: textfield;
+     -moz-appearance: textfield;
+          appearance: textfield;
   }
-
-  body {
-    background-color: ${props => props.theme.white};
+  input[type=number]::-webkit-inner-spin-button, 
+  input[type=number]::-webkit-outer-spin-button { 
+    -webkit-appearance: none;
   }
 `
