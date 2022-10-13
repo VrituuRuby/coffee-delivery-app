@@ -1,22 +1,25 @@
 import { Minus, Plus } from "phosphor-react"
-import { useState } from "react"
+import React, { useState } from "react"
 import { InputCounterContainer } from "./styles"
 
-export function InputCounter(){
-	const [counter, setCounter] = useState(1)
+interface InputCounterProps {
+	counter: number,
+	setCounter: (n: number) => void ,
+}
 
+export function InputCounter({setCounter, counter}: InputCounterProps){
 	function incrementCounter(step: number){
-		setCounter(state => state + step)
+		setCounter(counter + step)
 	}
 	function decrementCounter(step: number){
 		if (counter - step <= 0) return
-		setCounter(state => state - step)
+		setCounter(counter - step)
 	}
 
 	return(
 		<InputCounterContainer>
 			<button type="button" onClick={() => decrementCounter(1)}><Minus weight="bold" /></button>
-			<input type="number" min={1} value={counter}/>
+			<input type="number" min={1} value={counter} readOnly/>
 			<button type="button" onClick={() => incrementCounter(1)}><Plus weight="bold" /></button>
 		</InputCounterContainer>
 	)
