@@ -5,6 +5,10 @@ export const ShoppingCartContainer = styled.div`
   display: flex;
   flex-direction: column;
   gap: 0.75rem;
+
+  > div {
+    border-radius: 6px 2.75rem 6px 2.75rem;
+  }
 `
 
 export const ShoppingList = styled.ul`

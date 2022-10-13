@@ -1,6 +1,6 @@
 import styled from "styled-components"
 
-export const CoffeListContainer = styled.main`
+export const CoffeListContainer = styled.div`
   padding: 2rem 0;
 
   h3{
