@@ -1,28 +1,20 @@
-import { Trash } from "phosphor-react"
-import { InputCounter } from "../../../../components/InputCounter"
+import { useContext } from "react"
+import { ShoppingCartContext } from "../../../../contexts/ShoppingCart"
 import { CheckoutCard, CheckoutTitle } from "../../styles"
-import { RemoveButton, ShoppingCartContainer, ShoppingDetails, ShoppingItem, ShoppingList, ShoppingTotal, SubmitButton, TotalItem } from "./styles"
+import { ShoppingItem } from "../ShoppingItem"
+import { ShoppingCartContainer, ShoppingList, ShoppingTotal, SubmitButton, TotalItem } from "./styles"
 
 export function ShoppingCart(){
+	const {cart} = useContext(ShoppingCartContext)
+
 	return(
 		<ShoppingCartContainer>
 			<CheckoutTitle>Cafés selecionados</CheckoutTitle>
 			<CheckoutCard>
 				<ShoppingList>
-					<ShoppingItem>
-						<img src='./assets/coffees/Expresso.png' alt='Americano' />
-						<ShoppingDetails>
-							<span>Expresso Tradicional</span>
-							<div>
-								<InputCounter />
-								<RemoveButton type="button">
-									<Trash size={16}/>
-									REMOVER
-								</RemoveButton>
-							</div>
-						</ShoppingDetails>
-						<span>R$ <b>9,90</b></span>
-					</ShoppingItem>
+					{cart.map(item => (
+						<ShoppingItem key={item.id} coffeeData={item}/>
+					))}
 				</ShoppingList>
 				<ShoppingTotal>
 					<TotalItem>

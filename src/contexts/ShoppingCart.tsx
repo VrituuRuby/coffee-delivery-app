@@ -1,12 +1,12 @@
 import { createContext, ReactNode, useState } from "react"
 import { Coffee, COFFEE_LIST } from "../data/coffees"
 
-interface ICart extends Coffee {
+export interface ICart extends Coffee {
   quantity: number
 } 
 
 interface IShoppingCartContext {
-  cart: Coffee[],
+  cart: ICart[],
   setCart: (newCart : ICart[]) => void,
   addItem: (itemId : number) => void,
 }
