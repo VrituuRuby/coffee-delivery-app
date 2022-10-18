@@ -12,8 +12,17 @@ interface CoffeeCardProps {
 
 export function CoffeeCard({ coffee }: CoffeeCardProps){
 	const coffeeImage = coffee.image
-	const [counter, setCounter] = useState(1)
-	const {addItem} = useContext(ShoppingCartContext)
+	const [quantity, setQuantity] = useState(1)
+	const { addItem } = useContext(ShoppingCartContext)
+
+	function incrementCounter(){
+		setQuantity(quantity + 1)
+	}
+
+	function decrementCounter(){
+		if (quantity - 1 <= 0) return
+		setQuantity(quantity - 1)
+	}
 
 	return (
 		<CoffeeCardContainer>
@@ -32,8 +41,12 @@ export function CoffeeCard({ coffee }: CoffeeCardProps){
 							R$ <b>{(coffee.price/100).toFixed(2)}</b>
 				</span>
 				<ActionsContainer>
-					<InputCounter counter={counter} setCounter={setCounter}/>
-					<button type="button" onClick={() => addItem(coffee.id)}>
+					<InputCounter 
+						counter={quantity}
+						incrementCounter={incrementCounter}
+						decrementCounter={decrementCounter}
+					/>
+					<button type="button" onClick={() => addItem(coffee.id, quantity)}>
 						<ShoppingCart weight="fill" size={22} />
 					</button>
 				</ActionsContainer>

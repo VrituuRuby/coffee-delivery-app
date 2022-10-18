@@ -1,7 +1,7 @@
 import { Trash } from "phosphor-react"
-import { useState } from "react"
+import { useContext, useState } from "react"
 import { InputCounter } from "../../../../components/InputCounter"
-import { ICart } from "../../../../contexts/ShoppingCart"
+import { ICart, ShoppingCartContext } from "../../../../contexts/ShoppingCart"
 import { RemoveButton, ShoppingDetails, ShoppingItemContainer } from "./styles"
 
 interface ShoppingItemProps {
@@ -9,21 +9,34 @@ interface ShoppingItemProps {
 }
 
 export function ShoppingItem({coffeeData}: ShoppingItemProps){
-	const [counter, setCounter] = useState(1)
+	const {incrementItem, decrementItem, removeItem} = useContext(ShoppingCartContext)
+
+	function incrementCounter(){
+		incrementItem(coffeeData.id)
+	}
+
+	function decrementCounter(){
+		decrementItem(coffeeData.id)
+	}
+
 	return(
 		<ShoppingItemContainer>
 			<img src={coffeeData.image} alt={coffeeData.name} />
 			<ShoppingDetails>
 				<span>{coffeeData.name}</span>
 				<div>
-					<InputCounter counter={counter} setCounter={setCounter}/>
-					<RemoveButton type="button">
+					<InputCounter 
+						counter={coffeeData.quantity}
+						incrementCounter={incrementCounter}
+						decrementCounter={decrementCounter}
+					/>
+					<RemoveButton type="button" onClick={() => removeItem(coffeeData.id)}>
 						<Trash size={16}/>
             REMOVER
 					</RemoveButton>
 				</div>
 			</ShoppingDetails>
-			<span>R$ <b>{(coffeeData.price/100).toFixed(2)}</b></span>
+			<span>R$ <b>{((coffeeData.price * coffeeData.quantity)/100).toFixed(2)}</b></span>
 		</ShoppingItemContainer>
 	)
 }
