@@ -1,6 +1,13 @@
 import {createGlobalStyle} from "styled-components"
 
 export const GlobalStyle = createGlobalStyle`
+  :root{
+    --toastify-color-success: ${props => props.theme["purple-500"]};
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
 
   * {
     margin: 0;

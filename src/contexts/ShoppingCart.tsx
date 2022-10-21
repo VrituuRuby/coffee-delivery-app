@@ -1,4 +1,4 @@
-import { createContext, ReactNode, useState } from "react"
+import { createContext, ReactNode, useEffect, useState } from "react"
 import { Coffee, COFFEE_LIST } from "../data/coffees"
 
 export interface ICart extends Coffee {
@@ -21,7 +21,14 @@ type ShoppingCartProps = {
 export const ShoppingCartContext = createContext({} as IShoppingCartContext)
 
 export function ShoppingCartProvider({children}: ShoppingCartProps){
-	const [cart, setCart] = useState<ICart[]>([])
+	const cartStored = localStorage.getItem("@ignite-coffee-delivery:cartState-1.0.0")
+	const [cart, setCart] = useState<ICart[]>(cartStored ? JSON.parse(cartStored) : [])
+
+	useEffect(() => {
+		const cartState = JSON.stringify(cart)
+		localStorage.setItem("@ignite-coffee-delivery:cartState-1.0.0", cartState)
+
+	}, [cart])
 
 	function addItem(itemId: number, quantity = 1){
 		const copyCart = [...cart]

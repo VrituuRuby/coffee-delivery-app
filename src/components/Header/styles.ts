@@ -26,8 +26,27 @@ export const ActionsContainer = styled.div`
 
     &:last-child{
       background-color: ${props => props.theme["yellow-300"]};
-      color: ${props => props.theme["yellow-700"]}
+      color: ${props => props.theme["yellow-700"]};
+      position: relative;
     }
   }
+`
 
+export const NotificationBadge = styled.span`
+  display: flex;
+  align-items: center;
+  justify-content: center;
+ 
+  position: absolute;
+  right: -0.5rem;
+  top: -0.5rem;
+  width: 1.25rem;
+  height: 1.25rem;
+  border-radius: 50%;
+
+  font-size: 0.75rem;
+  font-weight: bold;
+
+  color: ${props => props.theme.white};
+  background-color: ${props => props.theme["yellow-700"]};
 `

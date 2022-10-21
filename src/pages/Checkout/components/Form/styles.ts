@@ -1,6 +1,6 @@
 import styled from "styled-components"
 
-export const FormContainer = styled.div`
+export const FormContainer = styled.form`
   width: 60%;
   display: flex;
   flex-direction: column;
@@ -57,13 +57,14 @@ export const PaymentOptions = styled.div`
   width: 100%;
   display: flex;
   justify-content: space-between;
+  align-items: center;
   gap: 0.75rem;
 
   label {
     display: flex;
     align-items: center;
     justify-content: left;
-    gap: 0.75rem;
+    gap: 0.5rem;
     user-select: none;
     cursor: pointer;
     flex: 1;

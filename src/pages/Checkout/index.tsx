@@ -4,7 +4,7 @@ import { CheckoutContainer } from "./styles"
 
 export function Checkout() {
 	return(
-		<CheckoutContainer action="">
+		<CheckoutContainer>
 			<Form />
 			<ShoppingCart />
 		</CheckoutContainer>

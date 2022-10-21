@@ -50,3 +50,8 @@ export const SubmitButton = styled.button`
   font-weight: bold;
   font-size: 0.75rem;
 `
+
+export const Spacer = styled.span`
+  width: 100%;
+  border-bottom: 1px solid ${props => props.theme["base-button"]};
+`

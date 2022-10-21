@@ -2,7 +2,7 @@ import { useContext } from "react"
 import { ShoppingCartContext } from "../../../../contexts/ShoppingCart"
 import { CheckoutCard, CheckoutTitle } from "../../styles"
 import { ShoppingItem } from "../ShoppingItem"
-import { ShoppingCartContainer, ShoppingList, ShoppingTotal, SubmitButton, TotalItem } from "./styles"
+import { ShoppingCartContainer, ShoppingList, ShoppingTotal, Spacer, SubmitButton, TotalItem } from "./styles"
 
 export function ShoppingCart(){
 	const {cart} = useContext(ShoppingCartContext)
@@ -15,11 +15,13 @@ export function ShoppingCart(){
 		<ShoppingCartContainer>
 			<CheckoutTitle>Cafés selecionados</CheckoutTitle>
 			<CheckoutCard>
+				<Spacer />
 				<ShoppingList>
 					{cart.map(item => (
 						<ShoppingItem key={item.id} coffeeData={item}/>
 					))}
 				</ShoppingList>
+				<Spacer />
 				<ShoppingTotal>
 					<TotalItem>
 						<p>Total de itens</p>
@@ -34,7 +36,7 @@ export function ShoppingCart(){
 						<p>R$ {totalCheckout}</p>
 					</TotalItem>
 				</ShoppingTotal>
-				<SubmitButton>
+				<SubmitButton type="submit" form="order-details">
 					CONFIRMAR PEDIDO
 				</SubmitButton>
 			</CheckoutCard>

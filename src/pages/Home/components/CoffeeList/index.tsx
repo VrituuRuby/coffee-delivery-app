@@ -1,6 +1,4 @@
 import { CoffeListContainer } from "./styles"
-
-import { ShoppingCart } from "phosphor-react"
 import { CoffeeCard } from "../CoffeeCard"
 
 import { COFFEE_LIST } from "../../../../data/coffees"

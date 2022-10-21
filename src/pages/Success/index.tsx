@@ -1,7 +1,8 @@
 import { CurrencyDollar, MapPin, Timer } from "phosphor-react"
 import { Illustration, OrderConfirmed, OrderInfo, SuccessContainer, SuccessTitle, SuccesSubtitle } from "./styles"
 
-export function Success(){
+export function Success(props: any){
+	console.log(props)
 	return(
 		<SuccessContainer>
 			<OrderConfirmed>

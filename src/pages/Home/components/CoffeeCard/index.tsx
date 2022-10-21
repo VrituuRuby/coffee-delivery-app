@@ -3,6 +3,7 @@ import { useContext, useState } from "react"
 import { InputCounter } from "../../../../components/InputCounter"
 import { ShoppingCartContext } from "../../../../contexts/ShoppingCart"
 import { Coffee } from "../../../../data/coffees"
+import { toast} from "react-toastify"
 
 import { ActionsContainer, CardFooter, CoffeeCardContainer, CoffeeDescription, CoffeeName, ContentContainer, Tags } from "./styles"
 
@@ -22,6 +23,13 @@ export function CoffeeCard({ coffee }: CoffeeCardProps){
 	function decrementCounter(){
 		if (quantity - 1 <= 0) return
 		setQuantity(quantity - 1)
+	}
+
+	function handleAddItem(){
+		toast.success(`Adicionado ao carrinho: ${quantity} ${coffee.name}`, {
+			position: "top-center"
+		})
+		addItem(coffee.id, quantity)
 	}
 
 	return (
@@ -46,7 +54,7 @@ export function CoffeeCard({ coffee }: CoffeeCardProps){
 						incrementCounter={incrementCounter}
 						decrementCounter={decrementCounter}
 					/>
-					<button type="button" onClick={() => addItem(coffee.id, quantity)}>
+					<button type="button" onClick={() => handleAddItem()}>
 						<ShoppingCart weight="fill" size={22} />
 					</button>
 				</ActionsContainer>

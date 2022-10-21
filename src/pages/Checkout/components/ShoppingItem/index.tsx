@@ -36,7 +36,7 @@ export function ShoppingItem({coffeeData}: ShoppingItemProps){
 					</RemoveButton>
 				</div>
 			</ShoppingDetails>
-			<span>R$ <b>{((coffeeData.price * coffeeData.quantity)/100).toFixed(2)}</b></span>
+			<span>R$ {((coffeeData.price * coffeeData.quantity)/100).toFixed(2)}</span>
 		</ShoppingItemContainer>
 	)
 }
