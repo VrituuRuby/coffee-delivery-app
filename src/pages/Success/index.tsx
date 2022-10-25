@@ -1,8 +1,22 @@
 import { CurrencyDollar, MapPin, Timer } from "phosphor-react"
+import { useLocation } from "react-router-dom"
 import { Illustration, OrderConfirmed, OrderInfo, SuccessContainer, SuccessTitle, SuccesSubtitle } from "./styles"
 
-export function Success(props: any){
-	console.log(props)
+interface Location{
+	state: {
+		cep: string,
+		city: string,
+		number: string,
+		district: string,
+		uf: string,
+		"street-address": string,
+		"payment-method": "debit-card" | "credit-card" | "cash",
+	}
+}
+
+export function Success(){
+	const location: Location = useLocation()
+	
 	return(
 		<SuccessContainer>
 			<OrderConfirmed>
@@ -13,7 +27,9 @@ export function Success(props: any){
 						<i className="purple">
 							<MapPin weight="fill" size={16}/>
 						</i>
-						<p>Entrega em <b>Antonio Escorsin, 2126</b> <br /> São Braz - Curitiba, PR</p>
+						<p>Entrega em <b>{`${location.state["street-address"]}, ${location.state.number}`}</b>
+							<br/>{`${location.state.district}, ${location.state.uf}`}
+						</p>
 					</li>
 					<li>
 						<i className="yellow">
@@ -25,7 +41,13 @@ export function Success(props: any){
 						<i className='dark-yellow'>
 							<CurrencyDollar weight="bold"/>
 						</i>
-						<p>Pagar no local  <br /><b>Cartão de crédito</b></p>
+						<p>Pagar no local  <br />
+							<b>
+								{location.state["payment-method"] === "cash" ? "Dinheiro" : ""}
+								{location.state["payment-method"] === "credit-card" ? "Cartão de Crédito" : ""}
+								{location.state["payment-method"] === "debit-card" ? "Cartão de Débito" : ""}
+							</b>
+						</p>
 					</li>
 				</OrderInfo>
 			</OrderConfirmed>

@@ -8,12 +8,13 @@ import { FormContainer, FormDescription, InputsContainer, PaymentOptions } from 
 
 export function Form(){
 	const { register, handleSubmit , formState: {errors}} = useForm()
-	const { cart } = useContext(ShoppingCartContext)
+	const { cart, wipeShoppingCart} = useContext(ShoppingCartContext)
 	const navigate = useNavigate()
 	
 	function onSubmit(data: any){
 		const order = {...data, orders: cart, id: Date.now()}	
 		navigate("/success", {state: order})
+		wipeShoppingCart()
 	}
 	
 	return(
@@ -37,9 +38,9 @@ export function Form(){
 						<input type="text" placeholder="Complemento" {...register("complement")}/>
 					</div>
 					<div>
-						<input type="text" placeholder="Bairro" {...register("district")}/>
+						<input type="text" placeholder="Bairro" {...register("district", {})}/>
 						<input type="text" placeholder="Cidade" {...register("city", {required: true})}/>
-						<input type="text" placeholder="UF" {...register("uf", {required: true})}/>
+						<input type="text" placeholder="UF" {...register("uf", {required: true, max: 2})}/>
 					</div>
 				</InputsContainer>
 			</CheckoutCard>

@@ -11,7 +11,8 @@ interface IShoppingCartContext {
   addItem: (itemId : number, quantity?: number) => void,
 	incrementItem: (itemID: number) => void,
 	decrementItem: (itemID: number) => void,
-	removeItem: (itemID: number) => void
+	removeItem: (itemID: number) => void,
+	wipeShoppingCart: () => void
 }
 
 type ShoppingCartProps = {
@@ -29,6 +30,10 @@ export function ShoppingCartProvider({children}: ShoppingCartProps){
 		localStorage.setItem("@ignite-coffee-delivery:cartState-1.0.0", cartState)
 
 	}, [cart])
+
+	function wipeShoppingCart(){
+		setCart([])
+	}
 
 	function addItem(itemId: number, quantity = 1){
 		const copyCart = [...cart]
@@ -75,7 +80,7 @@ export function ShoppingCartProvider({children}: ShoppingCartProps){
 	}
 
 	return(
-		<ShoppingCartContext.Provider value={{cart, setCart, addItem, incrementItem, decrementItem, removeItem}}>
+		<ShoppingCartContext.Provider value={{cart, setCart, addItem, incrementItem, decrementItem, removeItem, wipeShoppingCart}}>
 			{children}
 		</ShoppingCartContext.Provider>
 	)
