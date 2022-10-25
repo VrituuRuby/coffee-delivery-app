@@ -17,6 +17,19 @@ interface Location{
 export function Success(){
 	const location: Location = useLocation()
 	
+	const getPaymentString = (): string => {
+		switch(location.state["payment-method"]){
+		case "debit-card":
+			return "Cartão de Débito"
+		case "credit-card":
+			return "Cartão de Crédito"
+		case "cash":
+			return "Dinheiro"
+		default:
+			return "Erro"
+		}
+	}
+
 	return(
 		<SuccessContainer>
 			<OrderConfirmed>
@@ -43,9 +56,7 @@ export function Success(){
 						</i>
 						<p>Pagar no local  <br />
 							<b>
-								{location.state["payment-method"] === "cash" ? "Dinheiro" : ""}
-								{location.state["payment-method"] === "credit-card" ? "Cartão de Crédito" : ""}
-								{location.state["payment-method"] === "debit-card" ? "Cartão de Débito" : ""}
+								{getPaymentString()}
 							</b>
 						</p>
 					</li>
