@@ -21,7 +21,7 @@ export function Form(){
 		<FormContainer id="order-details" onSubmit={handleSubmit(onSubmit)}>
 			<CheckoutTitle>Complete seu pedido</CheckoutTitle>
 			<CheckoutCard>
-				<FormDescription>
+				<FormDescription color="yellow">
 					<MapPinLine weight="fill" size={24}/>
 								
 					<div>
@@ -45,7 +45,7 @@ export function Form(){
 				</InputsContainer>
 			</CheckoutCard>
 			<CheckoutCard>
-				<FormDescription className='payment-option'>
+				<FormDescription color="purple">
 					<CurrencyDollar size={24} />
 					<div>
 						<h3>Pagamento</h3>

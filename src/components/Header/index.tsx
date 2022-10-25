@@ -21,7 +21,7 @@ export function Header(){
 					</h1>
 				</NavLink>
 				<ActionsContainer>
-					<a href="#">
+					<a href="">
 						<MapPin size={22} weight="fill" />
 						Curitiba - PR
 					</a>

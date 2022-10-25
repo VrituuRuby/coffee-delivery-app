@@ -6,9 +6,9 @@ export interface ICart extends Coffee {
 } 
 
 interface IShoppingCartContext {
-  cart: ICart[],
-  setCart: (newCart : ICart[]) => void,
-  addItem: (itemId : number, quantity?: number) => void,
+	cart: ICart[],
+	setCart: (newCart : ICart[]) => void,
+	addItem: (itemId : number, quantity?: number) => void,
 	incrementItem: (itemID: number) => void,
 	decrementItem: (itemID: number) => void,
 	removeItem: (itemID: number) => void,
@@ -45,7 +45,7 @@ export function ShoppingCartProvider({children}: ShoppingCartProps){
 		} else {
 			const coffee = COFFEE_LIST.find(coffee => coffee.id === itemId)
 			if (!coffee) return
-			const newCoffee : ICart = {...coffee, quantity : quantity}
+			const newCoffee : ICart = {...coffee, quantity}
 			const newCart = [...copyCart, newCoffee]
 
 			setCart(newCart)
