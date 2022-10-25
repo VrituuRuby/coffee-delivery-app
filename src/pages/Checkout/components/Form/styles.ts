@@ -7,7 +7,11 @@ export const FormContainer = styled.form`
   gap: 0.75rem;
 `
 
-export const FormDescription = styled.div`
+interface IFormDescriptionProps {
+  color: "yellow" | "purple";
+}
+
+export const FormDescription = styled.div<IFormDescriptionProps>`
   display: flex;
   align-items: center;
   gap: 8px;
@@ -19,11 +23,7 @@ export const FormDescription = styled.div`
   }
 
   svg {
-    color: ${props => props.theme["yellow-500"]};
-  }
-
-  &.payment-option svg {
-    color: ${props => props.theme["purple-500"]};
+    color: ${props => props.theme[props.color == "yellow" ? "yellow-500" : "purple-500"]};
   }
 `
 
