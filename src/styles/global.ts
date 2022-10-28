@@ -13,11 +13,12 @@ export const GlobalStyle = createGlobalStyle`
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    transition: box-shadow 0.2s;
   }
   
   :focus{
     outline: 0;
-    box-shadow: 0 0 1px 1px ${props => props.theme["purple-500"]};
+    box-shadow: 0 0 2px 1px ${props => props.theme["purple-500"]};
   }
   
   button:hover{

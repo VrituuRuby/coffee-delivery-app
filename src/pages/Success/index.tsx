@@ -5,20 +5,20 @@ import { Illustration, OrderConfirmed, OrderInfo, SuccessContainer, SuccessTitle
 interface Location{
 	state: {
 		cep: string,
-		city: string,
-		number: string,
-		district: string,
+		cidade: string,
+		numero: string,
+		bairro: string,
 		uf: string,
-		"street-address": string,
-		"payment-method": "debit-card" | "credit-card" | "cash",
+		rua: string,
+		paymentMethod: "debit-card" | "credit-card" | "cash",
 	}
 }
 
 export function Success(){
-	const location: Location = useLocation()
+	const { state }: Location = useLocation()
 	
 	const getPaymentString = (): string => {
-		switch(location.state["payment-method"]){
+		switch(state.paymentMethod){
 		case "debit-card":
 			return "Cartão de Débito"
 		case "credit-card":
@@ -30,7 +30,7 @@ export function Success(){
 		}
 	}
 
-	return(
+	return state ?(
 		<SuccessContainer>
 			<OrderConfirmed>
 				<SuccessTitle>Uhu! Pedido confirmado</SuccessTitle>
@@ -40,8 +40,8 @@ export function Success(){
 						<i className="purple">
 							<MapPin weight="fill" size={16}/>
 						</i>
-						<p>Entrega em <b>{`${location.state["street-address"]}, ${location.state.number}`}</b>
-							<br/>{`${location.state.district}, ${location.state.uf}`}
+						<p>Entrega em <b>{`${state.rua}, ${state.numero}`}</b>
+							<br/>{`${state.bairro}, ${state.uf}`}
 						</p>
 					</li>
 					<li>
@@ -65,4 +65,5 @@ export function Success(){
 			<Illustration src='./assets/Illustration.svg' alt='' />
 		</SuccessContainer>
 	)
+		: "Loading"
 }

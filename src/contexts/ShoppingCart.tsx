@@ -58,7 +58,6 @@ export function ShoppingCartProvider({children}: ShoppingCartProps){
 		if(!coffeItem) return
 		coffeItem.quantity += 1
 		setCart(cartCopy)
-		console.log(cart)
 	}
 
 	function decrementItem(itemID: number){
@@ -68,7 +67,6 @@ export function ShoppingCartProvider({children}: ShoppingCartProps){
 		if (coffeItem.quantity - 1 <= 0) return
 		coffeItem.quantity -= 1
 		setCart(cartCopy)
-		console.log(cart)
 	}
 
 	function removeItem(itemID: number){
