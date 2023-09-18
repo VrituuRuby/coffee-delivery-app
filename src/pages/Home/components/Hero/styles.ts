@@ -4,39 +4,64 @@ export const HeroContainer = styled.main`
   display: flex;
   align-items: center;
   justify-content: space-between;
-  gap: 3.5rem;
-  padding: 6rem 0;
+  gap: 1rem;
+  padding: 6rem 2rem;
   overflow: show;
 
+  @media screen and (max-width: 700px) {
+    padding: 0 2rem;
+    flex-direction: column-reverse;
+    gap: 2rem;
+  }
+
   img.blur{
-    width: 100%;
-    position: absolute;
-    left: 0;
+    position: fixed;
     top: 0;
+    left: 0;
+    width: 100vw;
     z-index: -1;
+    @media screen and (max-width: 1024px){
+      display: none;
+    }
   }
 
   div {
+    display: flex;
+    flex-direction: column;
     h1 {
       font-family: 'Baloo 2', cursive;
-      font-size: 3rem;
+      font-size: 2.75rem;
       color: ${props => props.theme["base-title"]};
       line-height: 1.3;
       margin-bottom: 1rem;
+
+      @media screen and (max-width: 1024px){
+        font-size: 2.5rem;
+      }
+
     }
     h2 {
       font-weight: 400;
       font-size: 1.25rem;
       color: ${props => props.theme["base-subtitle"]};
       line-height: 1.3;
+      @media screen and (max-width: 1024px){
+        font-size: 1rem;
+      }
+      @media screen and (max-width: 600px){
+        font-size: 1.25rem;
+      }
     }
-  }
-`
 
-export const ImageContainer = styled.div`
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  }
+
+  img#promo {
+    max-width: 450px;
+    width: 100%;
+      @media screen and (max-width: 1024px){
+      max-width: 350px;
+      }
+  }
 `
 
 export const GridContainer = styled.ul`

@@ -1,8 +1,15 @@
 import styled from "styled-components"
 
 export const HeaderContainer = styled.header`
+  position: fixed;
+  top: 0;
+  left: 0;
+  background-color: white;
+  z-index: 10;
+  width: 100%;
+
   nav {
-    margin: 2rem 0;
+    padding: 1rem 2rem;
     display: flex;
     justify-content: space-between;
   }

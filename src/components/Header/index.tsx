@@ -17,7 +17,7 @@ export function Header(){
 			<nav>
 				<NavLink to="/">
 					<h1>
-						<img src={logo} alt="Coffe Delivery" />
+						<img src={logo} alt="Coffee Delivery" />
 					</h1>
 				</NavLink>
 				<ActionsContainer>

@@ -1,11 +1,11 @@
 import { Bank, CreditCard, CurrencyDollar, MapPinLine, Money } from "phosphor-react"
-import { useContext, useState } from "react"
+import { useContext } from "react"
 import { useForm } from "react-hook-form"
 import { useNavigate } from "react-router-dom"
 import { ShoppingCartContext } from "../../../../contexts/ShoppingCart"
-import { useDebounce } from "../../../../hooks/useDebounce"
 import { CheckoutCard, CheckoutTitle } from "../../styles"
 import { FormContainer, FormDescription, InputsContainer, PaymentOptions } from "./styles"
+import { toast } from "react-toastify"
 
 interface IFormsData{
 	cep: string,
@@ -41,8 +41,12 @@ export function Form(){
 	}
 
 	function onSubmit(data: IFormsData){
+		if(cart.length <= 0) {
+			toast.warn("É necessário adicionar items ao carrinho para concluír pedido.")
+			return
+		}
 		const order = {...data, orders: cart, id: Date.now()}	
-		
+		console.log(order)
 		navigate("/success", {state: order})
 		wipeShoppingCart()
 	}

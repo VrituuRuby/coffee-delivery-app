@@ -54,18 +54,18 @@ export function ShoppingCartProvider({children}: ShoppingCartProps){
 
 	function incrementItem(itemID: number){
 		const cartCopy = [...cart]
-		const coffeItem = cartCopy.find(item => item.id === itemID)
-		if(!coffeItem) return
-		coffeItem.quantity += 1
+		const coffeeItem = cartCopy.find(item => item.id === itemID)
+		if(!coffeeItem) return
+		coffeeItem.quantity += 1
 		setCart(cartCopy)
 	}
 
 	function decrementItem(itemID: number){
 		const cartCopy = [...cart]
-		const coffeItem = cartCopy.find(item => item.id === itemID)
-		if(!coffeItem) return
-		if (coffeItem.quantity - 1 <= 0) return
-		coffeItem.quantity -= 1
+		const coffeeItem = cartCopy.find(item => item.id === itemID)
+		if(!coffeeItem) return
+		if (coffeeItem.quantity - 1 <= 0) return
+		coffeeItem.quantity -= 1
 		setCart(cartCopy)
 	}
 

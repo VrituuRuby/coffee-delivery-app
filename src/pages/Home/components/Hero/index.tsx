@@ -1,6 +1,6 @@
 import { Coffee, Package, ShoppingCart, Timer } from "phosphor-react"
-import coffeImage from "/assets/Imagem.png"
-import { GridContainer, HeroContainer, ImageContainer } from "./styles"
+import coffeeImage from "/assets/Imagem.png"
+import { GridContainer, HeroContainer } from "./styles"
 
 import BgImage from "/assets/Background.png"
 
@@ -10,10 +10,10 @@ export function Hero(){
 			<img className='blur' src={BgImage} alt="" />
 			<div>
 				<h1>
-					Encontre o café perfeito para qualque hora do dia
+					Encontre o café perfeito para qualquer hora do dia
 				</h1>
 				<h2>
-					Com coffe delivery você recebe seu café aonde estiver, a qualquer hora
+					Com coffee delivery você recebe seu café aonde estiver, a qualquer hora
 				</h2>
 				<GridContainer>
 					<li>
@@ -42,9 +42,7 @@ export function Hero(){
 					</li>
 				</GridContainer>
 			</div>
-			<ImageContainer>
-				<img src={coffeImage} alt='A coffe delivery promotional image' />
-			</ImageContainer>
+			<img id="promo" src={coffeeImage} alt='A coffee delivery promotional image' />
 		</HeroContainer>
 	)
 }

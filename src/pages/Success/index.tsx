@@ -65,5 +65,5 @@ export function Success(){
 			<Illustration src='./assets/Illustration.svg' alt='' />
 		</SuccessContainer>
 	)
-		: "Loading"
+		: <p>Loading ...</p>
 }

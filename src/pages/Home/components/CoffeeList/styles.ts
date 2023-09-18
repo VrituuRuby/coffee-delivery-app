@@ -1,6 +1,6 @@
 import styled from "styled-components"
 
-export const CoffeListContainer = styled.div`
+export const CoffeeListContainer = styled.div`
   padding: 2rem 0;
 
   h3{
@@ -13,6 +13,7 @@ export const CoffeListContainer = styled.div`
   }
 
   ul {
+    justify-content: center;
     list-style: none;
     display: flex;
     flex-wrap: wrap;
