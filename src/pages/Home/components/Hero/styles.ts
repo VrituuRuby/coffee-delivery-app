@@ -5,7 +5,7 @@ export const HeroContainer = styled.main`
   align-items: center;
   justify-content: space-between;
   gap: 1rem;
-  padding: 6rem 2rem;
+  padding: 6rem 0;
   overflow: show;
 
   @media screen and (max-width: 700px) {
@@ -15,10 +15,10 @@ export const HeroContainer = styled.main`
   }
 
   img.blur{
-    position: fixed;
+    position: absolute;
     top: 0;
     left: 0;
-    width: 100vw;
+    width: 100%;
     z-index: -1;
     @media screen and (max-width: 1024px){
       display: none;

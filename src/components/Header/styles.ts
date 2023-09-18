@@ -6,10 +6,14 @@ export const HeaderContainer = styled.header`
   left: 0;
   background-color: white;
   z-index: 10;
+  display: flex;
+  justify-content: center;
   width: 100%;
 
   nav {
+    max-width: 1120px;
     padding: 1rem 2rem;
+    width: 100%;
     display: flex;
     justify-content: space-between;
   }
