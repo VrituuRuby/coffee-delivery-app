@@ -1,42 +1,43 @@
 import { Trash } from "phosphor-react"
-import { useContext, useState } from "react"
+import { useContext } from "react"
 import { InputCounter } from "../../../../components/InputCounter"
 import { ICart, ShoppingCartContext } from "../../../../contexts/ShoppingCart"
 import { RemoveButton, ShoppingDetails, ShoppingItemContainer } from "./styles"
 
 interface ShoppingItemProps {
-  coffeeData: ICart
+	coffeeData: ICart
 }
 
-export function ShoppingItem({coffeeData}: ShoppingItemProps){
-	const {incrementItem, decrementItem, removeItem} = useContext(ShoppingCartContext)
+export function ShoppingItem({ coffeeData }: ShoppingItemProps) {
+	const { incrementItem, decrementItem, removeItem } = useContext(ShoppingCartContext)
 
-	function incrementCounter(){
+	function incrementCounter() {
 		incrementItem(coffeeData.id)
 	}
 
-	function decrementCounter(){
+	function decrementCounter() {
 		decrementItem(coffeeData.id)
 	}
 
-	return(
+	return (
 		<ShoppingItemContainer>
-			<img src={coffeeData.image} alt={coffeeData.name} />
 			<ShoppingDetails>
-				<span>{coffeeData.name}</span>
+				<img src={coffeeData.image} alt={coffeeData.name} />
 				<div>
-					<InputCounter 
-						counter={coffeeData.quantity}
-						incrementCounter={incrementCounter}
-						decrementCounter={decrementCounter}
-					/>
-					<RemoveButton type="button" onClick={() => removeItem(coffeeData.id)}>
-						<Trash size={16}/>
-            REMOVER
-					</RemoveButton>
+					<span>{coffeeData.name}</span>
+					<div>
+						<InputCounter
+							counter={coffeeData.quantity}
+							incrementCounter={incrementCounter}
+							decrementCounter={decrementCounter}
+						/>
+						<RemoveButton type="button" onClick={() => removeItem(coffeeData.id)}>
+							<Trash size={16} />
+						</RemoveButton>
+					</div>
 				</div>
 			</ShoppingDetails>
-			<span>R$ {((coffeeData.price * coffeeData.quantity)/100).toFixed(2)}</span>
+			<span>R$ {((coffeeData.price * coffeeData.quantity) / 100).toFixed(2)}</span>
 		</ShoppingItemContainer>
 	)
 }

@@ -5,10 +5,8 @@
     },
     "extends": [
         "eslint:recommended",
-        "plugin:react/recommended",
-        "plugin:@typescript-eslint/recommended"
-    ],
-    "overrides": [
+        "plugin:@typescript-eslint/recommended",
+        "plugin:react/recommended"
     ],
     "parser": "@typescript-eslint/parser",
     "parserOptions": {
@@ -16,10 +14,11 @@
         "sourceType": "module"
     },
     "plugins": [
-        "react",
-        "@typescript-eslint"
+        "@typescript-eslint",
+        "react"
     ],
     "rules": {
+        "react/react-in-jsx-scope": "off",
         "indent": [
             "error",
             "tab"
@@ -35,7 +34,6 @@
         "semi": [
             "error",
             "never"
-        ],
-        "react/react-in-jsx-scope": "off"
+        ]
     }
 }

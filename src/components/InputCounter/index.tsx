@@ -1,5 +1,4 @@
 import { Minus, Plus } from "phosphor-react"
-import React, { useState } from "react"
 import { InputCounterContainer } from "./styles"
 
 interface InputCounterProps {

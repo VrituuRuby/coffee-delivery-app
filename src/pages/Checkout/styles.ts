@@ -2,8 +2,14 @@ import styled from "styled-components"
 
 export const CheckoutContainer = styled.div`
   display: flex;
-  justify-content: space-between;
   gap: 2rem;
+
+  @media screen and (max-width: 1000px) {
+    flex-direction: column;
+    width: 100%;
+    gap: 1rem;
+    padding-bottom: 2rem;
+  }
 `
 export const CheckoutCard = styled.div`
   display: flex;
@@ -12,6 +18,9 @@ export const CheckoutCard = styled.div`
   padding: 2.5rem;
   background-color: ${props => props.theme["base-card"]};
   border-radius: 6px;
+  @media screen and (max-width: 600px) {
+    padding: 1rem;
+  }
 
   span.error{
     font-size: 0.75rem;

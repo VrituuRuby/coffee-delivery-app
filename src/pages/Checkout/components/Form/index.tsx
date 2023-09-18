@@ -56,8 +56,7 @@ export function Form(){
 			<CheckoutTitle>Complete seu pedido</CheckoutTitle>
 			<CheckoutCard>
 				<FormDescription color="yellow">
-					<MapPinLine weight="fill" size={24}/>
-								
+					<MapPinLine weight="fill" size="24px"/>
 					<div>
 						<h3>Endereço da entrega</h3>
 						<p>Informe o endereço onde deseja receber o pedido</p>

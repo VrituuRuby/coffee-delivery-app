@@ -12,7 +12,8 @@ export const HeaderContainer = styled.header`
 
   nav {
     max-width: 1120px;
-    padding: 1rem 2rem;
+    padding: 1rem 0;
+    margin: 0 2rem;
     width: 100%;
     display: flex;
     justify-content: space-between;

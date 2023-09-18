@@ -9,6 +9,11 @@ export const ShoppingCartContainer = styled.div`
   > div {
     border-radius: 6px 2.75rem 6px 2.75rem;
   }
+
+
+  @media screen  and (max-width: 1000px){
+    width: 100%;
+  }
 `
 
 export const ShoppingList = styled.ul`

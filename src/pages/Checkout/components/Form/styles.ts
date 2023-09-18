@@ -5,6 +5,10 @@ export const FormContainer = styled.form`
   display: flex;
   flex-direction: column;
   gap: 0.75rem;
+
+  @media screen  and (max-width: 1000px){
+    width: 100%;
+  }
 `
 
 interface IFormDescriptionProps {
@@ -13,7 +17,6 @@ interface IFormDescriptionProps {
 
 export const FormDescription = styled.div<IFormDescriptionProps>`
   display: flex;
-  align-items: center;
   gap: 8px;
   color: ${props => props.theme["base-text"]};
 
@@ -60,6 +63,10 @@ export const PaymentOptions = styled.div`
   align-items: center;
   gap: 0.75rem;
 
+  @media screen and (max-width: 600px){
+    flex-direction: column;
+  }
+
   label {
     display: flex;
     align-items: center;
@@ -75,6 +82,11 @@ export const PaymentOptions = styled.div`
     color: ${props => props.theme["base-text"]};
     line-height: 1.6;
     font-size: 0.75rem;
+
+
+  @media screen and (max-width: 600px){
+    width: 100%;
+  }
 
     svg {
       color: ${props => props.theme["purple-500"]};

@@ -2,30 +2,41 @@ import styled from "styled-components"
 
 export const ShoppingItemContainer = styled.li`
   display: flex;
-  align-items: center;
-  gap: 20px;
+  justify-content: space-between;
+  width: 100%;
 
-  img {
-    width: 64px;
-    height: 64px;
+  > span {
+    color: ${props => props.theme["base-text"]};
+    font-weight: bold;
+    text-align: center;
   }
 `
 
 export const ShoppingDetails = styled.div`
   display: flex;
-  flex-direction: column;
-  gap: 0.5rem;
-  padding: 0.5rem;
+  gap: 20px;
 
-  span {
-    font-size: 1rem;
-    line-height: 1.3;
-    color: ${props => props.theme["base-subtitle"]};
+  img {
+    aspect-ratio: 1;
+    width: 4rem;
+
+    @media screen and (max-width: 480px){
+      width:  3rem;
+      height: 3rem;
+    }
   }
 
-  div {
+  > div{
     display: flex;
-    gap: 0.5rem;
+    flex-direction: column;
+    justify-content: space-between;
+    color: ${props => props.theme["base-subtitle"]};
+
+   > div {
+      display: flex;
+      flex-direction: row;
+      gap: 0.5rem;
+    }
   }
 `
 

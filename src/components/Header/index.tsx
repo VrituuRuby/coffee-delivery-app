@@ -10,7 +10,7 @@ import { ShoppingCartContext } from "../../contexts/ShoppingCart"
 export function Header(){
 	const {cart} = useContext(ShoppingCartContext)
 
-	const ItemsInCart = cart.reduce((acc, item) => acc + 1, 0)
+	const ItemsInCart = cart.reduce((acc, _) => acc + 1, 0)
 
 	return(
 		<HeaderContainer>
