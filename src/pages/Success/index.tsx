@@ -1,6 +1,6 @@
 import { CurrencyDollar, MapPin, Timer } from "phosphor-react"
 import { useLocation } from "react-router-dom"
-import { Illustration, OrderConfirmed, OrderInfo, SuccessContainer, SuccessTitle, SuccesSubtitle } from "./styles"
+import { Illustration, OrderConfirmed, OrderInfo, SuccessContainer, SuccessTitle, SuccessSubtitle } from "./styles"
 
 interface Location{
 	state: {
@@ -34,7 +34,7 @@ export function Success(){
 		<SuccessContainer>
 			<OrderConfirmed>
 				<SuccessTitle>Uhu! Pedido confirmado</SuccessTitle>
-				<SuccesSubtitle>Agora é só aguardar que logo o café chegará até você</SuccesSubtitle>
+				<SuccessSubtitle>Agora é só aguardar que logo o café chegará até você</SuccessSubtitle>
 				<OrderInfo>
 					<li>
 						<i className="purple">

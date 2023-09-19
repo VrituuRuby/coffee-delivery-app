@@ -5,6 +5,10 @@ export const SuccessContainer = styled.main`
   display: flex;
   justify-content: space-between;
   gap: 1rem;
+
+  @media screen and (max-width: 950px){
+    flex-direction: column;
+  }
 `
 
 export const Illustration = styled.img`
@@ -13,6 +17,9 @@ flex: 1;
 
 export const OrderConfirmed = styled.div`
 width: 50%;
+  @media screen and (max-width: 950px){
+    width: 100%;
+  }
 `
 
 export const OrderInfo = styled.ul`
@@ -59,7 +66,7 @@ export const SuccessTitle = styled.p`
   font-weight: bold;
 `
 
-export const SuccesSubtitle = styled.p`
+export const SuccessSubtitle = styled.p`
   font-size: 1.25rem;
   line-height: 1.3;
   color: ${props => props.theme["base-subtitle"]};
