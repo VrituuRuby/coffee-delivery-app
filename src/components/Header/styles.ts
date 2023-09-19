@@ -9,6 +9,7 @@ export const HeaderContainer = styled.header`
   display: flex;
   justify-content: center;
   width: 100%;
+  box-shadow: 0 0 10px rgb(0,0,0,0.25);
 
   nav {
     max-width: 1120px;

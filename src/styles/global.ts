@@ -28,6 +28,19 @@ export const GlobalStyle = createGlobalStyle`
     min-height: 100vh;
   }
 
+  ::-webkit-scrollbar{
+    width: 0.5rem;
+  }
+
+  ::-webkit-scrollbar-track{
+    background-color: #eee;
+  }
+
+  ::-webkit-scrollbar-thumb{
+    background-color: ${props => props.theme["purple-500"]};
+    border-radius: 100px;
+  }
+
   #root{
     min-height: 100vh;
   }
