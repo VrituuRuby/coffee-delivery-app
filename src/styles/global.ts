@@ -7,6 +7,7 @@ export const GlobalStyle = createGlobalStyle`
 
   html {
     scroll-behavior: smooth;
+    min-height: 100vh;
   }
 
   * {
@@ -21,13 +22,14 @@ export const GlobalStyle = createGlobalStyle`
     box-shadow: 0 0 2px 1px ${props => props.theme["purple-500"]};
   }
   
-  button:hover{
-    cursor: pointer;
-  }
-  
   body {
     background-color: ${props => props.theme.white};
-    -webkit-font-smoothing: antialised;
+    -webkit-font-smoothing: antialiased;
+    min-height: 100vh;
+  }
+
+  #root{
+    min-height: 100vh;
   }
 
   body, input, button, textarea{

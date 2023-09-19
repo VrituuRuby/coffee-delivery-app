@@ -93,5 +93,9 @@ export const ActionsContainer = styled.div`
     border-radius: 6px;
     background-color: ${props => props.theme["purple-700"]};
     color: ${props => props.theme["base-card"]};
+
+    &:hover{
+      cursor: pointer;
+    }
   }
 `

@@ -54,6 +54,10 @@ export const RemoveButton = styled.button`
 
   font-size: 0.75rem;
 
+  &:hover{
+    cursor: pointer;
+  }
+
   svg {
     color: ${props => props.theme["purple-500"]};
   }

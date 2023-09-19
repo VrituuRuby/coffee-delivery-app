@@ -24,5 +24,8 @@ export const InputCounterContainer = styled.div`
     border: 0;
     background-color: ${props => props.theme["base-button"]};
     color: ${props => props.theme["purple-500"]};
+    &:hover{
+      cursor: pointer;
+    }
   }
 `

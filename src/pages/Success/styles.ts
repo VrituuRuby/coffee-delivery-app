@@ -3,8 +3,10 @@ import styled from "styled-components"
 export const SuccessContainer = styled.main`
   margin-top: 5rem;
   display: flex;
+  align-items: start;
   justify-content: space-between;
   gap: 1rem;
+  flex: 1;
 
   @media screen and (max-width: 950px){
     flex-direction: column;

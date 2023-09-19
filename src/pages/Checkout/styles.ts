@@ -2,6 +2,8 @@ import styled from "styled-components"
 
 export const CheckoutContainer = styled.div`
   display: flex;
+  flex: 1;
+  height: 100%;
   gap: 2rem;
 
   @media screen and (max-width: 1000px) {

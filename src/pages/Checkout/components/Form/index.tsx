@@ -19,6 +19,7 @@ interface IFormsData{
 }
 
 interface LocationData{
+	erro?: boolean;
 	bairro: string,
 	cep: string,
 	localidade: string,
@@ -32,7 +33,9 @@ export function Form(){
 	const navigate = useNavigate()
 
 	async function getLocationData(cep: string){
+		if(cep.trim().length < 8) return
 		const dataJSON : LocationData = await (await fetch(`https://viacep.com.br/ws/${cep}/json`)).json()
+		if(dataJSON.erro) return
 		setValue("rua", dataJSON.logradouro)
 		setValue("bairro", dataJSON.bairro)
 		setValue("cidade", dataJSON.localidade)
