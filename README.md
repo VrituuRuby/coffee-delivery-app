@@ -2,6 +2,8 @@
 
 Este projeto é uma aplicação de entrega de café, onde os usuários podem escolher entre diversas opções de café e especificar um local de entrega. Foi desenvolvido usando React como parte do Curso Ignite da Rocketseat.
 
+Deploy: [https://coffeedelivery.onrender.com](https://coffeedelivery.onrender.com)
+
 ## Como executar
 
 Instale as dependências necessarias executando:
